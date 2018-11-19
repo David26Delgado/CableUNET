@@ -35,6 +35,48 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+                    
+                    <!-- Center Side Of Navbar -->
+                    @guest
+
+                    @else
+                        <div class="mx-auto" style="width: auto;">
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                        @if (Auth::user()->is_admin)
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Creación de Servicios</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Creación de Paquetes</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Emitir Facturas</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Autorizaciones</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Administración de Usuarios</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Programación</a>
+                                  </li>
+                        @else
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Contratar Servicios</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Factura</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Programación</a>
+                                  </li>
+                        @endif
+                                </ul>
+                            </div>
+                        </div>
+                    @endguest
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -58,7 +100,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar Sesión') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
