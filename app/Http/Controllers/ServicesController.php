@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Internet;
+use App\Telefonia;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -11,51 +13,41 @@ class ServicesController extends Controller
 		return view('admin.adminservicios', compact('data'));
 	}
 
-	public function createInternetService(){
-		
+	public function createNetService(){
+
+		$data = request()->all();
+
+		if($data['velocidadInternet'] >= 256)
+				$data['velocidadInternet'] = "Internet de ".$data['velocidadInternet']." Kbps";
+			else
+				$data['velocidadInternet'] = "Internet de ".$data['velocidadInternet']." Mbps";
+
+		Internet::create([
+            'descripcion' => $data['velocidadInternet'],
+            'precio' => $data['precio']
+        ]);
+
+		return view('admin.adminservicios');
 	}
 
-	// public function showService(){
-	// 	return "HOLA";
-	// 	// $data = request()->all();
-	// 	// dd($data);
+	public function createTlfService(){
 
- //  //       // User::create([
- //  //       //     'name' => $data['name'],
- //  //       //     'email' => $data['email'],
- //  //       //     'password' => $data['password']
- //  //       // ]);
+		$data = request()->all();
 
- //  //       return redirect()->route('adminServicios');
-	// }
+		$description = "Plan con ".$data['minutos']." minutos, ".$data['mensajes']." mensajes y ".$data['megas']." megas de navegación.";
 
-	// public function internet(array $data){
-	// 	$data = request()->all();
+		Telefonia::create([
+            'descripcion' => $description,
+            'precio' => $data['precio']
+        ]);
 
- //        User::create([
- //            'name' => $data['name'],
- //            'email' => $data['email'],
- //            'password' => $data['password']
- //        ]);
+		return view('admin.adminservicios');
+	}
 
- //        return redirect()->route('home');
-	// }
+	public function createCblService(){
+		$data = request()->all();
 
- //    protected function validator(array $data)
- //    {
- //        return Validator::make($data, [
- //            'name' => ['required', 'string', 'max:255'],
- //            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
- //            'password' => ['required', 'string', 'min:6', 'confirmed'],
- //        ]);
- //    }
+		return view('admin.adminservicios');
+	}
 
- //    protected function create(array $data)
- //    {
- //        return User::create([
- //            'name' => $data['name'],
- //            'email' => $data['email'],
- //            'password' => Hash::make($data['password']),
- //        ]);
- //    }
 }

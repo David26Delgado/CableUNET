@@ -30,8 +30,8 @@
     	<hr>
     	@if($data['servicios'] == 'Internet')
 			<p>Especifique la nueva opción del servicio de Internet: </p>
-			<form action="">
-
+			<form action="{{ route('createNetService') }}" method="POST">
+				{{csrf_field()}}
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <label class="input-group-text" for="velocidadInternet">Velocidad de Internet:</label>
@@ -63,8 +63,8 @@
 			</form>
 		@elseif($data['servicios'] == 'Telefonía')
 			<p>Especifique la nueva opción del servicio de Telefonía: </p>
-			<form action="#">
-
+			<form action="{{ route('createTlfService') }}" method="POST">
+				{{csrf_field()}}
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Minutos:</span>
@@ -98,8 +98,8 @@
 			</form>
 		@elseif($data['servicios'] == 'Cable')
 			<p>Especifique la nueva opción del servicio de Cable: </p>
-			<form action="#">
-
+			<form action="{{ route('createCblService') }}">
+				{{csrf_field()}}
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del plan:</span>
