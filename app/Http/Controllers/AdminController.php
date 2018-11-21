@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Internet;
+use App\Telefonia;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,7 +17,14 @@ class AdminController extends Controller
     }
 
     public function paquetes(){
-    	return view('admin.adminPaquetes');
+
+        $net = Internet::all();
+        $net = $net->toArray();
+
+        $tlf = Telefonia::all();
+        $tlf = $tlf->toArray();
+
+    	return view('admin.adminPaquetes', compact('net', 'tlf'));
     }
 
     public function facturas(){

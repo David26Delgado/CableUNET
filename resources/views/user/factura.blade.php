@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('header', "Factura")
 
 @section('content')
@@ -25,5 +26,4 @@
   </div>
 </div>
 
-       
 @endsection

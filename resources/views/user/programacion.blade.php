@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('header', "Programacion")
 
 @section('content')
@@ -27,4 +28,3 @@
 
        
 @endsection
-

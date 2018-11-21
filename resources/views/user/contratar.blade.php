@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('header', "Contratar servicio")
 
 @section('content')
