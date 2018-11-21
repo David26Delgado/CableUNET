@@ -45,7 +45,7 @@
                                 <ul class="navbar-nav">
                         @if (Auth::user()->is_admin)
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Creación de Servicios</a>
+                                    <a class="nav-link" href="{{ route('adminServicios') }}">Creación de Servicios</a>
                                   </li>
                                   <li class="nav-item">
                                     <a class="nav-link" href="#">Creación de Paquetes</a>

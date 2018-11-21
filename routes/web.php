@@ -33,6 +33,10 @@ Route::post('register', 'Auth\RegisterController@register');
 //Vistas del Administrador
 
 Route::get('/admin/dashboard', 'AdminController@dashboard');
+Route::get('/admin/servicios', 'AdminController@servicios')->name('adminServicios');
+#Creación de servicios
+Route::post('service', 'ServicesController@showServiceForm')->name('serviceForm');
+Route::post('internet', 'ServicesController@createInternetService')->name('createInternetService');
 
 //Vistas del Usuario
 
