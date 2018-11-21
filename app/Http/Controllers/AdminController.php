@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    
     public function dashboard(){
     	return view('admin.adminDash');
     }
@@ -35,8 +36,10 @@ class AdminController extends Controller
     	return view('admin.adminAutorizacion');
     }
 
-    public function usuarios(){
-    	return view('admin.adminUsuarios');
+    public function index(){
+
+        $user = User::orderBy('id','ASC')->paginate(8);
+    	return view('admin.adminUsuarios')->whit('users',$user);
     }
 
     public function programacion(){

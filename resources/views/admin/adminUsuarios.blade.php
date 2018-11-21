@@ -20,26 +20,21 @@
   </thead>
   <tbody>
 
-  <?php
-  for($i=0; $i<10; $i++){
-	echo "<tr>";
-	echo "<th scope=row>1</th>";
-	echo "<td>Mark</td>";
-	echo "<td>Otto</td>";
-	echo "<td>@mdo</td>";
-	echo "<td>
-	
+  @foreach($users as $user)
+	<tr>
+	<th scope="row">{{$user->id}}</th>
+	<td>{{$user->name}}</td>
+	<td>Otto</td>
+	<td>@mdo</td>
+	<td>
 		<button type=button class='btn btn-danger'>Eliminar</button>
 		<button type=button class='btn btn-success'>Editar</button>
-	
-	
-	
-	</td>";
- 	echo "</tr>";
+	</td>
+ 	</tr>
 
-  }
+  @endforeach
    
-	?>
+	
   
   </tbody>
 </table>
