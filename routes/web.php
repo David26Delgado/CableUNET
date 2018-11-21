@@ -53,6 +53,3 @@ Route::get('/user/contratar', 'UserController@contratar')->name('userContrar');
 Route::get('/user/factura','UserController@factura')->name('userFactura');
 Route::get('/user/programacion','UserController@programacion')->name('userProgramacion');
 
-
-
-Route::get('/home', 'HomeController@index')->name('home');
