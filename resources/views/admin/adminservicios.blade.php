@@ -98,7 +98,7 @@
 			</form>
 		@elseif($data['servicios'] == 'Cable')
 			<p>Especifique la nueva opción del servicio de Cable: </p>
-			<form action="{{ route('createCblService') }}">
+			<form action="{{ route('createChannels') }}">
 				{{csrf_field()}}
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">

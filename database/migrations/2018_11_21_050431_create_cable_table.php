@@ -15,6 +15,9 @@ class CreateCableTable extends Migration
     {
         Schema::create('cables', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->string('canales');
+            $table->float('precio');
             $table->timestamps();
         });
     }

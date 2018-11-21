@@ -44,7 +44,8 @@ Route::get('/admin/programacion', 'AdminController@programacion')->name('adminPr
 Route::post('service', 'ServicesController@showServiceForm')->name('serviceForm');
 Route::post('internet', 'ServicesController@createNetService')->name('createNetService');
 Route::post('telefonia', 'ServicesController@createTlfService')->name('createTlfService');
-Route::post('cable', 'ServicesController@createCblService')->name('createCblService');
+Route::post('cable', 'ServicesController@createChannels')->name('createChannels');
+Route::post('canales', 'ServicesController@createCblService')->name('createCblService');
 
 //Vistas del Usuario
 

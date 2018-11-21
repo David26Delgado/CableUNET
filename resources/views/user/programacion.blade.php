@@ -12,19 +12,12 @@
     <br>
 </select>
 <br>
-<select class="custom-select">
-    <option selected>Hora</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-</select>
-<br>
-<select class="custom-select">
-    <option selected>min</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-</select>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="canal">Hora:</label>
+  </div>
+  <input type="time">
+</div>
 
        
 @endsection

@@ -44,10 +44,16 @@ class ServicesController extends Controller
 		return view('admin.adminservicios');
 	}
 
-	public function createCblService(){
+	public function createChannels(){
 		$data = request()->all();
 
 		return view('admin.adminservicios');
+	}
+
+	public function createCblService(){
+		$data = request()->all();
+
+		// return view('admin.adminservicios');
 	}
 
 }
