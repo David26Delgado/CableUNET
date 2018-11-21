@@ -34,6 +34,12 @@ Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/servicios', 'AdminController@servicios')->name('adminServicios');
+Route::get('/admin/paquetes', 'AdminController@paquetes')->name('adminPaquetes');
+Route::get('/admin/facturas', 'AdminController@facturas')->name('adminFacturas');
+Route::get('/admin/autorizacion', 'AdminController@autorizacion')->name('adminAutorizacion');
+Route::get('/admin/usuarios', 'AdminController@usuarios')->name('adminUsuarios');
+Route::get('/admin/programacion', 'AdminController@programacion')->name('adminProgramacion');
+
 #Creación de servicios
 Route::post('service', 'ServicesController@showServiceForm')->name('serviceForm');
 Route::post('internet', 'ServicesController@createInternetService')->name('createInternetService');

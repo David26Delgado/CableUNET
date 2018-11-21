@@ -48,19 +48,19 @@
                                     <a class="nav-link" href="{{ route('adminServicios') }}">Creación de Servicios</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Creación de Paquetes</a>
+                                    <a class="nav-link" href="{{ route('adminPaquetes') }}">Creación de Paquetes</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Emitir Facturas</a>
+                                    <a class="nav-link" href="{{ route('adminFacturas') }}">Emitir Facturas</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Autorizaciones</a>
+                                    <a class="nav-link" href="{{ route('adminAutorizacion') }}">Autorizaciones</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Administración de Usuarios</a>
+                                    <a class="nav-link" href="{{ route('adminUsuarios') }}">Administración de Usuarios</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Programación</a>
+                                    <a class="nav-link" href="{{ route('adminProgramacion') }}">Programación</a>
                                   </li>
                         @else
                                   <li class="nav-item">
@@ -115,7 +115,24 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">@yield('header')</div>
+
+                            <div class="card-body">
+                                @if (session('status'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+                                @yield('content')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
