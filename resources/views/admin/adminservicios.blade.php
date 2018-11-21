@@ -31,76 +31,89 @@
     	@if($data['servicios'] == 'Internet')
 			<p>Especifique la nueva opción del servicio de Internet: </p>
 			<form action="">
-				<div class="form-group">
-					<label for="velocidadInternet">
-						Velocidad de Internet: 
-						<select class="form-control" name="velocidadInternet" id="velocidadInternet">
-							<optgroup label="Kbps">
-								<option value="256">256</option>
-								<option value="512">512</option>
-							</optgroup>
-							<optgroup label="Mbps">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="4">4</option>
-								<option value="10">10</option>
-								<option value="20">20</option>
-							</optgroup>
-						</select>
-					</label>
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="velocidadInternet">Velocidad de Internet:</label>
+				  </div>
+				  <select class="custom-select" name="velocidadInternet" id="velocidadInternet">
+				    <optgroup label="Kbps">
+						<option value="256">256</option>
+						<option value="512">512</option>
+					</optgroup>
+					<optgroup label="Mbps">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="4">4</option>
+						<option value="10">10</option>
+						<option value="20">20</option>
+					</optgroup>
+				  </select>
 				</div>
-				<div class="form-group">
-					<label for="precio">
-						Precio: 
-						<input type="number" id="precio" name="precio" class="form-control" min="0">
-					</label>
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
+				  </div>
+				  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
+
 				<button type="submit" class="btn btn-primary">Enviar</button>
+
 			</form>
 		@elseif($data['servicios'] == 'Telefonía')
 			<p>Especifique la nueva opción del servicio de Telefonía: </p>
-			<form action="">
-				<div class="form-group">
-					<label for="megas">
-						Minutos: 
-						<input type="number" id="megas" name="megas" class="form-control" min="0">
-					</label>
+			<form action="#">
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Minutos:</span>
+				  </div>
+				  <input type="number" min=0 name="minutos" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
-				<div class="form-group">
-					<label for="mensajes">
-						Megas: 
-						<input type="number" id="mensajes" name="mensajes" class="form-control" min="0">
-					</label>
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Megas:</span>
+				  </div>
+				  <input type="number" min=0 name="megas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
-				<div class="form-group">
-					<label for="precio">
-						Mensajes: 
-						<input type="number" id="precio" name="precio" class="form-control" min="0">
-					</label>
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Mensajes:</span>
+				  </div>
+				  <input type="number" min=0 name="mensajes" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
-				<div class="form-group">
-					<label for="minutos">
-						Precio: 
-						<input type="number" id="minutos" name="minutos" class="form-control" min="0">
-					</label>
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Precio:</span>
+				  </div>
+				  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
+
 				<button type="submit" class="btn btn-primary">Enviar</button>
+				
 			</form>
 		@elseif($data['servicios'] == 'Cable')
 			<p>Especifique la nueva opción del servicio de Cable: </p>
-			<form action="">
-				<div class="form-group">
-					<label for="nombreCable">
-						Nombre del plan: <br>
-						<input type="text" class="form-control" name="nombreCable" id="nombreCable" required>
-					</label>
+			<form action="#">
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del plan:</span>
+				  </div>
+				  <input type="text" min=0 name="nombreCable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
-				<div class="form-group">
-					<label for="numeroCanales">
-						Ingrese número de canales:
-						<input type="number" class="form-control" id="numeroCanales" name="numeroCanales" min=0>
-					</label>
+
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Número de canales:</span>
+				  </div>
+				  <input type="number" min=0 name="numeroCanales" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
+
 				<button type="submit" class="btn btn-primary">Enviar</button>
 			</form>
 		@endif
