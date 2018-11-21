@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Internet;
 use App\Telefonia;
+use App\Cable;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -24,7 +25,11 @@ class AdminController extends Controller
         $tlf = Telefonia::all();
         $tlf = $tlf->toArray();
 
-    	return view('admin.adminPaquetes', compact('net', 'tlf'));
+        $cbl = Cable::all();
+        $cbl = $cbl->toArray();
+
+
+    	return view('admin.adminPaquetes', compact('net', 'tlf', 'cbl'));
     }
 
     public function facturas(){

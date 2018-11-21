@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Internet;
 use App\Telefonia;
+use App\Cable;
+use App\Canal;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -47,13 +49,31 @@ class ServicesController extends Controller
 	public function createChannels(){
 		$data = request()->all();
 
-		return view('admin.adminservicios');
+		for ($i=0; $i < $data['numeroCanales']; $i++)
+			$array[] = $i+1;
+
+		return view('admin.adminservicios', compact('data', 'array'));
 	}
 
 	public function createCblService(){
 		$data = request()->all();
 
-		// return view('admin.adminservicios');
+		$canales = "";
+
+		for ($i=0; $i < $data['numeroCanales']; $i++){
+			Canal::create([
+				'nombre' => $data[$i+1]
+			]);
+			$canales .= $data[$i+1].", ";
+		}
+
+		Cable::create([
+			'nombre' => $data['nombreCable'],
+			'canales' => $canales,
+			'precio' => $data['precio']
+		]);
+
+		return view('admin.adminservicios');
 	}
 
 }

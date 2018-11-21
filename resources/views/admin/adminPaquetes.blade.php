@@ -6,7 +6,7 @@
 
     <div class="container">
     	<p>Rellene el formulario para crear un paquete de servicios:</p>
-    	<form action="#" method="POST">
+    	<form action="{{ route('createPackage') }}" method="POST">
     		{{csrf_field()}}
     		<fieldset class="form-group">
     			
@@ -21,9 +21,9 @@
 				  <div class="input-group-prepend">
 				    <label class="input-group-text" for="internet">Internet:</label>
 				  </div>
-				  <select class="custom-select" name="net" id="internet">
-					@forelse($net as $n)
-						<option value="{{$n['descripcion']}}">{{ $n['descripcion'] }}</option>
+				  <select class="custom-select" name="internet" id="internet">
+					@forelse($net as $key)
+						<option value="{{ $key['descripcion'] }}">{{ $key['descripcion'] }}</option>
 					@empty
 						<option value="">Ninguno</option>
 					@endforelse
@@ -35,20 +35,21 @@
 				    <label class="input-group-text" for="cable">Cable:</label>
 				  </div>
 				  <select class="custom-select" name="cable" id="cable">
-				    <option selected>Ninguno</option>
-				    <option value="1">One</option>
-				    <option value="2">Two</option>
-				    <option value="3">Three</option>
+				    @forelse($cbl as $key)
+						<option value="{{$key['nombre']}}">{{ $key['nombre'] }}</option>
+					@empty
+						<option value="">Ninguno</option>
+					@endforelse
 				  </select>
 				</div>
 
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
-				    <label class="input-group-text" for="tlf">Telefonía:</label>
+				    <label class="input-group-text" for="telefono">Telefonía:</label>
 				  </div>
-				  <select class="custom-select" name="tlf" id="tlf">
-				    @forelse($tlf as $t)
-						<option value="{{$t['descripcion']}}">{{ $t['descripcion'] }}</option>
+				  <select class="custom-select" name="telefono" id="telefono">
+				    @forelse($tlf as $key)
+						<option value="{{$key['descripcion']}}">{{ $key['descripcion'] }}</option>
 					@empty
 						<option value="">Ninguno</option>
 					@endforelse

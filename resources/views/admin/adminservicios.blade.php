@@ -97,25 +97,56 @@
 				
 			</form>
 		@elseif($data['servicios'] == 'Cable')
-			<p>Especifique la nueva opción del servicio de Cable: </p>
-			<form action="{{ route('createChannels') }}">
-				{{csrf_field()}}
-				<div class="input-group mb-3">
-				  <div class="input-group-prepend">
-				    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del plan:</span>
-				  </div>
-				  <input type="text" min=0 name="nombreCable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-				</div>
+			@if(!isset($data['nombreCable']))
+				<p>Especifique la nueva opción del servicio de Cable: </p>
+				<form action="{{ route('createChannels') }}" method="POST">
+					{{csrf_field()}}
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del plan:</span>
+					  </div>
+					  <input type="text" name="nombreCable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+					</div>
 
-				<div class="input-group mb-3">
-				  <div class="input-group-prepend">
-				    <span class="input-group-text" id="inputGroup-sizing-default">Número de canales:</span>
-				  </div>
-				  <input type="number" min=0 name="numeroCanales" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-				</div>
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-default">Número de canales:</span>
+					  </div>
+					  <input type="number" min=1 name="numeroCanales" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+					</div>
 
-				<button type="submit" class="btn btn-primary">Enviar</button>
-			</form>
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-default">Precio:</span>
+					  </div>
+					  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+					</div>
+
+					<input type="hidden" name="servicios" value="{{ $data['servicios'] }}">
+
+					<button type="submit" class="btn btn-primary">Enviar</button>
+				</form>
+			@else
+				<p>Ingrese nombre de los canales:</p>
+				<form action="{{ route('createCblService') }}" method="POST">
+					{{csrf_field()}}
+
+					@for ($i = 0; $i < $data['numeroCanales']; $i++)
+						<div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del Canal {{ $array[$i] }}:</span>
+						  </div>
+						  <input type="text" name="{{ $array[$i] }}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+						</div>
+					@endfor
+
+					<input type="hidden" name="nombreCable" value="{{ $data['nombreCable'] }}">
+					<input type="hidden" name="numeroCanales" value="{{ $data['numeroCanales'] }}">
+					<input type="hidden" name="precio" value="{{ $data['precio'] }}">
+
+					<button type="submit" class="btn btn-primary">Enviar</button>
+				</form>
+			@endif
 		@endif
 	@else
 
