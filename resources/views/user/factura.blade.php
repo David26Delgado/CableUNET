@@ -17,7 +17,7 @@
   
   </div>
   <div class="col-4"><br>Nombre del paquete basico: <br>
-                    Monto total a pagar:
+                         Monto total a pagar:
   </div>
   <div class="col-6">Descripcion del paquete basico:<br>
   Internet:<br>
