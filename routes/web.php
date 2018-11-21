@@ -48,6 +48,9 @@ Route::post('telefonia', 'ServicesController@createTlfService')->name('createTlf
 Route::post('cable', 'ServicesController@createChannels')->name('createChannels');
 Route::post('canales', 'ServicesController@createCblService')->name('createCblService');
 
+#Creación de paquetes
+Route::post('paquetes', 'PackageController@createPackage')->name('createPackage');
+
 //Vistas del Usuario
 
 Route::get('/user/dashboard', 'UserController@dashboard');
