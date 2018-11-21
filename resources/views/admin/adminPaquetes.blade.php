@@ -9,9 +9,11 @@
     	<form action="#" method="POST">
     		{{csrf_field()}}
     		<fieldset class="form-group">
-    			<div class="form-group">
-				    <label for="packageName">Nombre del paquete:</label>
-				    <input type="text" class="form-control" id="packageName">
+    			<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del paquete:</span>
+				  </div>
+				  <input type="text" min=0 name="packageName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
