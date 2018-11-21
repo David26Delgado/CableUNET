@@ -64,13 +64,13 @@
                                   </li>
                         @else
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Contratar Servicios</a>
+                                    <a class="nav-link" href="{{ route('userContrar') }}">Contratar Servicios</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Factura</a>
+                                    <a class="nav-link" href="{{ route('userFactura') }}">Factura</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Programación</a>
+                                    <a class="nav-link" href="{{ route('userProgramacion') }}">Programación</a>
                                   </li>
                         @endif
                                 </ul>

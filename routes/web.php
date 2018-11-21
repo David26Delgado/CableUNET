@@ -49,6 +49,9 @@ Route::post('cable', 'ServicesController@createCblService')->name('createCblServ
 //Vistas del Usuario
 
 Route::get('/user/dashboard', 'UserController@dashboard');
+Route::get('/user/contratar', 'UserController@contratar')->name('userContrar');
+Route::get('/user/factura','UserController@factura')->name('userFactura');
+Route::get('/user/programacion','UserController@programacion')->name('userProgramacion');
 
 
 

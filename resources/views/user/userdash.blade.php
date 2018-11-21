@@ -4,6 +4,5 @@
 
 @section('content')
 
-    Esta es una sesión de usuario. ¡Bienvenido!
-    
+       
 @endsection
