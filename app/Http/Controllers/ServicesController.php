@@ -6,6 +6,7 @@ use App\Internet;
 use App\Telefonia;
 use App\Cable;
 use App\Canal;
+use App\Pivote;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -49,29 +50,50 @@ class ServicesController extends Controller
 	public function createChannels(){
 		$data = request()->all();
 
-		for ($i=0; $i < $data['numeroCanales']; $i++)
-			$array[] = $i+1;
-
-		return view('admin.adminservicios', compact('data', 'array'));
+		return view('admin.adminservicios', compact('data'));
 	}
 
 	public function createCblService(){
+
 		$data = request()->all();
 
-		$canales = "";
+		$canales = Canal::all();
 
-		for ($i=0; $i < $data['numeroCanales']; $i++){
-			Canal::create([
-				'nombre' => $data[$i+1]
-			]);
-			$canales .= $data[$i+1].", ";
-		}
-
-		Cable::create([
+		$cable = Cable::create([
 			'nombre' => $data['nombreCable'],
-			'canales' => $canales,
 			'precio' => $data['precio']
 		]);
+
+		for ($i=0; $i < $data['numeroCanales']; $i++){
+
+			$band = false;
+
+			foreach ($canales as $canal) {
+				if($canal->nombre == $data[$i+1]){
+					$band = true;
+					Pivote::create([
+						'cable_id' => $cable->id,
+						'canal_id' => $canal->id
+					]);
+				}
+			}
+
+			if(!$band){
+				$aux = Canal::create([
+					'nombre' => $data[$i+1]
+				]);
+				Pivote::create([
+					'cable_id' => $cable->id,
+					'canal_id' => $aux->id
+				]);
+			}
+		}
+
+		
+
+		for ($i=0; $i < $data['numeroCanales']; $i++) { 
+			
+		}
 
 		return view('admin.adminservicios');
 	}

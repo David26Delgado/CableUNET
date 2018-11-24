@@ -134,9 +134,9 @@
 					@for ($i = 0; $i < $data['numeroCanales']; $i++)
 						<div class="input-group mb-3">
 						  <div class="input-group-prepend">
-						    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del Canal {{ $array[$i] }}:</span>
+						    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del Canal {{ $i+1 }}:</span>
 						  </div>
-						  <input type="text" name="{{ $array[$i] }}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+						  <input type="text" name="{{ $i+1 }}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 						</div>
 					@endfor
 
