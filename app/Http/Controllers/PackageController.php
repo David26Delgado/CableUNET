@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PackageController extends Controller
 {
     public function createPackage(){
+
     	$data = request()->all();
 
     	$descripcion = "";

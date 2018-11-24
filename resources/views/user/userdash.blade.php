@@ -4,6 +4,6 @@
 
 @section('content')
 
-    Esta es una sesión de usuario. ¡Bienvenido!
+    Esta es una sesión de usuario. ¡Bienvenido {{ Auth::user()->name }} {{ Auth::user()->apellido }}!
     
 @endsection

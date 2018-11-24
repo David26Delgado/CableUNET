@@ -24,12 +24,6 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
 
-// Password Reset Routes...
-// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-// Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-// Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-// Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-
 //Vistas del Administrador
 
 Route::get('/admin/dashboard', 'AdminController@dashboard');
@@ -51,10 +45,15 @@ Route::post('canales', 'ServicesController@createCblService')->name('createCblSe
 #Creación de paquetes
 Route::post('paquetes', 'PackageController@createPackage')->name('createPackage');
 
+#Administración de Usuarios
+Route::post('eliminarUsuario', 'AdminUsuariosController@eliminar')->name('deleteUser');
+Route::get('/admin/usuarios/editar', 'AdminUsuariosController@showEdit')->name('showEdit');
+Route::post('editarUsuario', 'AdminUsuariosController@editar')->name('editUser');
+Route::post('hacerAdmin', 'AdminUsuariosController@makeAdmin')->name('makeAdmin');
+
 //Vistas del Usuario
 
 Route::get('/user/dashboard', 'UserController@dashboard');
 Route::get('/user/contratar', 'UserController@contratar')->name('userContrar');
 Route::get('/user/factura','UserController@factura')->name('userFactura');
 Route::get('/user/programacion','UserController@programacion')->name('userProgramacion');
-

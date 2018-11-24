@@ -14,7 +14,7 @@
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del paquete:</span>
 				  </div>
-				  <input type="text" min=0 name="packageName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				  <input type="text" min=0 name="packageName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 				</div>
 
 				<div class="input-group mb-3">

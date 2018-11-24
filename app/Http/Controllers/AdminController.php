@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Internet;
 use App\Telefonia;
 use App\Cable;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -44,7 +45,7 @@ class AdminController extends Controller
     public function index(){
 
         $user = User::orderBy('id','ASC')->paginate(8);
-    	return view('admin.adminUsuarios')->whit('users',$user);
+    	return view('admin.adminUsuarios')->with('users',$user);
     }
 
     public function programacion(){

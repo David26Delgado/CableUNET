@@ -55,7 +55,7 @@
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
 				  </div>
-				  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 				</div>
 
 				<button type="submit" class="btn btn-primary">Enviar</button>
@@ -69,28 +69,28 @@
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Minutos:</span>
 				  </div>
-				  <input type="number" min=0 name="minutos" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				  <input type="number" min=0 name="minutos" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 				</div>
 
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Megas:</span>
 				  </div>
-				  <input type="number" min=0 name="megas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				  <input type="number" min=0 name="megas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 				</div>
 
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Mensajes:</span>
 				  </div>
-				  <input type="number" min=0 name="mensajes" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				  <input type="number" min=0 name="mensajes" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 				</div>
 
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-default">Precio:</span>
 				  </div>
-				  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 				</div>
 
 				<button type="submit" class="btn btn-primary">Enviar</button>
@@ -105,21 +105,21 @@
 					  <div class="input-group-prepend">
 					    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del plan:</span>
 					  </div>
-					  <input type="text" name="nombreCable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+					  <input type="text" name="nombreCable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 					</div>
 
 					<div class="input-group mb-3">
 					  <div class="input-group-prepend">
 					    <span class="input-group-text" id="inputGroup-sizing-default">Número de canales:</span>
 					  </div>
-					  <input type="number" min=1 name="numeroCanales" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+					  <input type="number" min=1 name="numeroCanales" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 					</div>
 
 					<div class="input-group mb-3">
 					  <div class="input-group-prepend">
 					    <span class="input-group-text" id="inputGroup-sizing-default">Precio:</span>
 					  </div>
-					  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+					  <input type="number" min=0 name="precio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 					</div>
 
 					<input type="hidden" name="servicios" value="{{ $data['servicios'] }}">
@@ -136,7 +136,7 @@
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del Canal {{ $array[$i] }}:</span>
 						  </div>
-						  <input type="text" name="{{ $array[$i] }}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+						  <input type="text" name="{{ $array[$i] }}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 						</div>
 					@endfor
 
